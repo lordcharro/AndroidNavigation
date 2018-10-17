@@ -1,7 +1,6 @@
 package com.navproject.charroapps.navigationproject
 
 import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -31,6 +30,11 @@ class ThirdFragment : Fragment() {
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
 
+    //Same as static final in Java
+    class Values {
+        companion object { val commValue = "Going to Fragment 1" }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -44,6 +48,10 @@ class ThirdFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_third, container, false)
 
         view.findViewById<Button>(R.id.btn_fg3_begin).setOnClickListener { view ->
+
+            //Pass some information to the main activity
+            onButtonPressed(Values.commValue)
+
             val navController = Navigation.findNavController(view)
             navController.navigate(R.id.action_thirdFragment_to_firstFragment)
         }
@@ -56,9 +64,8 @@ class ThirdFragment : Fragment() {
         return view
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    fun onButtonPressed(uri: Uri) {
-      //  listener?.onFragmentInteraction(uri)
+    fun onButtonPressed(value: String) {
+        listener?.onFragmentInteractionFragment3(value)
     }
 
     override fun onAttach(context: Context) {
@@ -88,7 +95,7 @@ class ThirdFragment : Fragment() {
      */
     interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        fun onFragmentInteractionFragment3(stuff: String)
+        fun onFragmentInteractionFragment3(value: String)
     }
 
     companion object {

@@ -2,6 +2,7 @@ package com.navproject.charroapps.navigationproject
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 
 class MainActivity : AppCompatActivity(), FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmentInteractionListener, ThirdFragment.OnFragmentInteractionListener  {
 
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity(), FirstFragment.OnFragmentInteractionLis
         // Do stuff
     }
 
-    override fun onFragmentInteractionFragment3(string: String) {
-        // Do stuff
+    override fun onFragmentInteractionFragment3(value: String) {
+        Log.d("Communication", value)
     }
 }

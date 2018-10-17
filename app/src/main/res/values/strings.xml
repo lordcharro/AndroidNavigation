@@ -1,13 +1,11 @@
 <resources>
     <string name="app_name">NavigationProject</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- UI Text -->
     <string name="txt_first_fragment">Click on the NEXT button to pass to the next screen using the Navigation Component.</string>
     <string name="txt_second_fragment">Click on the NEXT button to pass to the next screen or the BACK button pass to the previously screen using the Navigation Component.</string>
     <string name="btn_next_fragment">Next</string>
     <string name="btn_back_fragment">Back</string>
     <string name="btn_begin_fragment">To the Begin</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
