@@ -40,12 +40,14 @@ class SecondFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_second, container, false)
 
+        view.findViewById<Button>(R.id.btn_fg2_next).setOnClickListener { view ->
+            val navController = Navigation.findNavController(view)
+            navController.navigate(R.id.action_secondFragment_to_thirdFragment)
+        }
         view.findViewById<Button>(R.id.btn_fg2_back).setOnClickListener { view ->
             val navController = Navigation.findNavController(view)
             navController.navigateUp()

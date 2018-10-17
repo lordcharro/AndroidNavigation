@@ -12,11 +12,31 @@
             tools:layout="@layout/fragment_first">
         <action
                 android:id="@+id/action_firstFragment_to_secondFragment"
-                app:destination="@id/secondFragment"/>
+                app:destination="@id/secondFragment"
+                app:enterAnim="@anim/slide_out_top"
+                app:exitAnim="@anim/slide_in_top"/>
     </fragment>
     <fragment
             android:id="@+id/secondFragment"
             android:name="com.navproject.charroapps.navigationproject.SecondFragment"
             android:label="fragment_second"
-            tools:layout="@layout/fragment_second"/>
+            tools:layout="@layout/fragment_second">
+        <action
+                android:id="@+id/action_secondFragment_to_thirdFragment"
+                app:destination="@id/thirdFragment"
+                app:enterAnim="@anim/slide_out_top"
+                app:exitAnim="@anim/slide_in_top"/>
+
+    </fragment>
+    <fragment
+            android:id="@+id/thirdFragment"
+            android:name="com.navproject.charroapps.navigationproject.ThirdFragment"
+            android:label="fragment_third"
+            tools:layout="@layout/fragment_third">
+        <action
+                android:id="@+id/action_thirdFragment_to_firstFragment"
+                app:destination="@id/firstFragment"
+                app:enterAnim="@anim/slide_out_top"
+                app:exitAnim="@anim/slide_in_top"/>
+    </fragment>
 </navigation>

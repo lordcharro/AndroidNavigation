@@ -19,13 +19,13 @@ private const val ARG_PARAM2 = "param2"
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [FirstFragment.OnFragmentInteractionListener] interface
+ * [ThirdFragment.OnFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [FirstFragment.newInstance] factory method to
+ * Use the [ThirdFragment.newInstance] factory method to
  * create an instance of this fragment.
  *
  */
-class FirstFragment : Fragment() {
+class ThirdFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -41,20 +41,24 @@ class FirstFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_first, container, false)
+        val view = inflater.inflate(R.layout.fragment_third, container, false)
 
-        view.findViewById<Button>(R.id.btn_fg_next).setOnClickListener { view ->
+        view.findViewById<Button>(R.id.btn_fg3_begin).setOnClickListener { view ->
             val navController = Navigation.findNavController(view)
-            navController.navigate(R.id.action_firstFragment_to_secondFragment)
+            navController.navigate(R.id.action_thirdFragment_to_firstFragment)
         }
 
-        //btn_fg_next.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.secondFragment, null))
+        view.findViewById<Button>(R.id.btn_fg3_back).setOnClickListener { view ->
+            val navController = Navigation.findNavController(view)
+            navController.navigateUp()
+        }
 
         return view
     }
 
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
+      //  listener?.onFragmentInteraction(uri)
     }
 
     override fun onAttach(context: Context) {
@@ -84,7 +88,7 @@ class FirstFragment : Fragment() {
      */
     interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        fun onFragmentInteractionFragment1(stuff: String)
+        fun onFragmentInteractionFragment3(stuff: String)
     }
 
     companion object {
@@ -94,12 +98,12 @@ class FirstFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment FirstFragment.
+         * @return A new instance of fragment ThirdFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            FirstFragment().apply {
+            ThirdFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

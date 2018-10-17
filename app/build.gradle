@@ -36,10 +36,10 @@ dependencies {
     // Navigation
     def nav_version = "1.0.0-alpha06"
 
-    implementation "android.arch.navigation:navigation-fragment:$nav_version" // use -ktx for Kotlin
-    implementation "android.arch.navigation:navigation-ui:$nav_version" // use -ktx for Kotlin
+    implementation "android.arch.navigation:navigation-fragment-ktx:$nav_version" // using -ktx for Kotlin
+    implementation "android.arch.navigation:navigation-ui-ktx:$nav_version" // using -ktx for Kotlin
 
     // optional - Test helpers
-    androidTestImplementation "android.arch.navigation:navigation-testing:$nav_version" // use -ktx for Kotlin
+    androidTestImplementation "android.arch.navigation:navigation-testing-ktx:$nav_version" // using -ktx for Kotlin
 }
 apply plugin: "androidx.navigation.safeargs"

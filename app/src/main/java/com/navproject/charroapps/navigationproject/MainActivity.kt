@@ -3,7 +3,7 @@ package com.navproject.charroapps.navigationproject
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 
-class MainActivity : AppCompatActivity(), FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmentInteractionListener  {
+class MainActivity : AppCompatActivity(), FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmentInteractionListener, ThirdFragment.OnFragmentInteractionListener  {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,6 +15,10 @@ class MainActivity : AppCompatActivity(), FirstFragment.OnFragmentInteractionLis
     }
 
     override fun onFragmentInteractionFragment2(string: String) {
+        // Do stuff
+    }
+
+    override fun onFragmentInteractionFragment3(string: String) {
         // Do stuff
     }
 }
