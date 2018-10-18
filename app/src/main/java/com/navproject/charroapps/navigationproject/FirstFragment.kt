@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.navigation.Navigation
-import kotlinx.android.synthetic.main.fragment_first.view.*
 
 
 // TODO: Rename parameter arguments, choose names that match

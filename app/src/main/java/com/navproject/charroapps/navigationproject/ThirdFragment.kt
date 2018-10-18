@@ -48,28 +48,30 @@ class ThirdFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_third, container, false)
 
-        val valueEditText = view.findViewById<EditText>(R.id.editText_fr3_text)
+        val valueEditText : EditText = view.findViewById(R.id.editText_fr3_text)
 
+        // Button to navigate to the first fragment
         view.findViewById<Button>(R.id.btn_fg3_begin).setOnClickListener { view ->
 
-            //Pass some information to the main activity
+            // Pass some information to the main activity using Interface
             onButtonPressed(Values.commValue)
 
-            //Pass some information to the FirstFragment using the saveArgs
+            // Pass some information to the FirstFragment using the saveArgs,
+            // we attach the data to the action using the auto-generated classes
+            // like ThirdFragmentDirections
             val valuePass = valueEditText.text.toString()
             val action = ThirdFragmentDirections.ActionThirdFragmentToFirstFragment().setArgsPass(valuePass)
 
-
+            // Navigate to the next fragment
             val navController = Navigation.findNavController(view)
             navController.navigate(action)
-            //navController.navigate(R.id.action_thirdFragment_to_firstFragment)
         }
 
+        // Button to navigate back
         view.findViewById<Button>(R.id.btn_fg3_back).setOnClickListener { view ->
             val navController = Navigation.findNavController(view)
             navController.navigateUp()
         }
-
 
         return view
     }
