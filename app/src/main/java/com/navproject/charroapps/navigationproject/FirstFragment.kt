@@ -8,7 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.navigation.Navigation
+import kotlinx.android.synthetic.main.fragment_first.view.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -47,6 +49,10 @@ class FirstFragment : Fragment() {
             val navController = Navigation.findNavController(view)
             navController.navigate(R.id.action_firstFragment_to_secondFragment)
         }
+
+        val txtToDisplay : TextView = view.findViewById(R.id.txt_fg1_text)
+        val info = FirstFragmentArgs.fromBundle(arguments).argsPass
+        txtToDisplay.text = info.toString()
 
         //btn_fg_next.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.secondFragment, null))
 

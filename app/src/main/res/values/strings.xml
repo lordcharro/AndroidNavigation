@@ -4,6 +4,8 @@
     <!-- UI Text -->
     <string name="txt_first_fragment">Click on the NEXT button to pass to the next screen using the Navigation Component.</string>
     <string name="txt_second_fragment">Click on the NEXT button to pass to the next screen or the BACK button pass to the previously screen using the Navigation Component.</string>
+    <string name="txt_third_fragment">You can use the EditText below to send some data to the first fragment using the safe args.</string>
+    <string name="txt_some_text">Type some text</string>
     <string name="btn_next_fragment">Next</string>
     <string name="btn_back_fragment">Back</string>
     <string name="btn_begin_fragment">To the Begin</string>

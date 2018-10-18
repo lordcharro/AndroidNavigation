@@ -55,5 +55,20 @@
                 android:layout_marginEnd="8dp"
                 app:srcCompat="@drawable/ic_launcher_foreground"/>
 
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_fg1_text"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/textView_fg1"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/btn_fg_next"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                android:textColor="@android:color/white"
+                tools:text="Text from other Fragment"/>
+
     </android.support.constraint.ConstraintLayout>
 </FrameLayout>

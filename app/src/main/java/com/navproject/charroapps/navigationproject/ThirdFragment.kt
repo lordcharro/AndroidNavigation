@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import androidx.navigation.Navigation
 
 
@@ -47,19 +48,28 @@ class ThirdFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_third, container, false)
 
+        val valueEditText = view.findViewById<EditText>(R.id.editText_fr3_text)
+
         view.findViewById<Button>(R.id.btn_fg3_begin).setOnClickListener { view ->
 
             //Pass some information to the main activity
             onButtonPressed(Values.commValue)
 
+            //Pass some information to the FirstFragment using the saveArgs
+            val valuePass = valueEditText.text.toString()
+            val action = ThirdFragmentDirections.ActionThirdFragmentToFirstFragment().setArgsPass(valuePass)
+
+
             val navController = Navigation.findNavController(view)
-            navController.navigate(R.id.action_thirdFragment_to_firstFragment)
+            navController.navigate(action)
+            //navController.navigate(R.id.action_thirdFragment_to_firstFragment)
         }
 
         view.findViewById<Button>(R.id.btn_fg3_back).setOnClickListener { view ->
             val navController = Navigation.findNavController(view)
             navController.navigateUp()
         }
+
 
         return view
     }
