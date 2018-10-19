@@ -6,7 +6,9 @@ This app has 1 activity with 3 fragments where the workflow is managed by the Na
 
 I also implement a simple **unit test** and **instrumented test** using JUnit and Espresso.
 
+### Navigation workflow with instrumented test
 
+<img src="screens/navigation_video.gif" width="500"/>
 
 ### Some links
 
